@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <style>
+      /*Logo and movement*/
+      .logoImg{
+        position: relative;
+        height: 250px;
+        width: 800px;
+        align-self: center;
+        transition: 1s;
+      }
+      .logoImg:hover{
+        animation-name: Shake;
+        animation-duration: 0.4s;
+        animation-iteration-count: 2;
+      }
+      .logoImg{
+        height: 75px !important;
+        width: 250px !important;
+        align-self: center;
+      }
+      /*Logo Shake Animation*/
+      @keyframes Shake {
+        30%{
+          transform: translateX(50px);
+          animation-timing-function: ease-in-out;
+        }
+        70%{
+          transform: translateX(-50px);
+          animation-timing-function: ease-in-out;
+        }
+        100%{
+          transform: translateX(0px);
+          animation-timing-function: ease-in-out;
+        }
+      }
+      /*CSS styling for the main color palette*/
+      /*@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+        td:hover, th:hover{
+          transform: scale(2);
+        }
+        footer{
+          font-size: small !important;
+        }
+        .logoImg{
+        height: 75px !important;
+        width: 250px !important;
+        align-self: center;
+      }
+      }*/
+      /*CSS styling for the main color palette*/
+      table {
+        width: 80%;
+        height:100%;
+        border: 4px solid #E9E616;
+        background-color: grey;
+        color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+      }
+
+      td{
+        border: 2px solid #E9E616;
+        background-color: #507F80;
+        padding-left: 10px;
+        text-align: left;
+        width: 70px;
+        height: 50px;
+        white-space: pre;
+        transition: transform 0.3s ease;
+        font-size: large;
+      }
+
+      th{
+        border: 2px solid #E9E616;
+        background-color: darkslategray;
+        padding-left: 10px;
+        text-align: left;
+        width: 70px;
+        height: 50px;
+        white-space: pre;
+        transition: transform 0.3s ease;
+        font-size: large;
+      }
+
+      /*Interactive elements*/
+      td:hover, td:active{
+        transform: scale(1.75);
+        background-color: black;
+      }
+      th:hover, th:active{
+        transform: scale(1.75);
+        background-color: black;
+      }
+
+      /*Body Styling*/
+      body {
+        background-color: teal;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      /*CSS Styling for Footer*/
+      footer {
+        background-color: rgb(4, 4, 48);
+        padding: 10px;
+        text-align: center;
+        margin-top: auto;
+        height: fit-content;
+        color: aliceblue;
+      }
+      footer a {
+        margin: 10px;
+        color: aliceblue;
+      }
+    </style>
+
+    <title>Timetable</title>
+  </head>
+  <body>
+
+    <!--Logo-->
+    <img src="Small_Logo.png" class="logoImg">
+
+    <!--Timetable-->
+    <table>
+      <h1 style="text-align: center; color: aliceblue;">Timetable</h1>
+      <tr>
+        <th>Day</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thur</th>
+        <th>Fri</th>
+      </tr>
+      <tr>
+        <th>Date/time</th>
+        <th>9 April 2023</th>
+        <th>10 April 2023</th>
+        <th>11 April 2023</th>
+        <th>12 April 2023</th>
+        <th>13 April 2023</th>
+      </tr>
+      <tr>
+        <th>08:00 - 12:00</th>
+        <td>
+          ITP401
+          M.Mochesane
+        </td>
+        <td>
+          DSA402
+          D.Brits
+        </td>
+        <td>
+          OPS301
+          J.Sulliman
+        </td>
+        <td>
+          DTS411
+          P.Barnard
+        </td>
+        <td>
+          DSA402
+          D.Brits
+        </td>
+      </tr>
+      <tr>
+        <th>12:00-13:00</th>
+        <td>
+          Lunch
+        </td>
+        <td>
+          Lunch
+        </td>
+        <td>
+          Lunch
+        </td>
+        <td>
+          Lunch
+        </td>
+        <td>
+          End of day
+        </td>
+      </tr>
+      <tr>
+        <th>13:00-16:00</th>
+        <td>
+          OPS301
+          J.Sulliman
+        </td>
+        <td>
+          Int. Prep
+          N/A
+        </td>
+        <td>
+          DSA402
+          D.Brits
+        </td>
+        <td>
+          DTS411
+          P.Barnard
+        </td>
+      </tr>
+    </table>
+
+    <!--Interactive Footer which links to each page-->
+    <footer>
+
+      <a href="Home.html">Home</a>
+      <a href="discussion.html">Discussion</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About us</a>
+      <a href="contact-us.html">Contact us</a>
+
+      <p>Message us on <a href="mailto:TopHatsBuddies@gmail.com">TopHatsBuddies@gmail.com</a>, find more information on the contact us page</p>
+
+      <p >Copyright &copy; 2024 Top Hats</p>
+
+    </footer>
+  </body>
+</html>
+
+
+

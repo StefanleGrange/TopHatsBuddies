@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title color>Share Resources</title>
+    <style>
+        /*Logo and movement*/
+        .logoImg {
+            position: relative;
+            height: 250px;
+            width: 800px;
+            align-self: center;
+            transition: 1s;
+        }
+        .logoImg:hover {
+            animation-name: Shake;
+            animation-duration: 0.4s;
+            animation-iteration-count: 2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #008080;
+            color: white;
+            /*Body styling to fit footer at bottom*/
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+ 
+        h1 {
+            color: #333;
+            margin: 0 0 20px;
+            text-align: center;
+            border-style: solid;
+            border-color: #E9E616;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+ 
+        label {
+            display: block;
+            margin: 0 0 5px;
+        }
+
+        /*Inputs*/
+        input[type="file"] {
+            display: block;
+        }
+ 
+        .downloadbutton {
+            background-color: #9C6F44;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        #SubmitBtn {
+            padding: 15px 25px;
+            cursor: pointer;
+            background-color: rgb(4, 4, 48);
+            color: aliceblue;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            width: 300px;
+            margin: 10px auto;
+        }
+ 
+        .downloadbutton:hover {
+            background-color: #E9E616;
+        }
+ 
+        input[type="submit"] {
+            background-color: #9C6F44;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+ 
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-container h3,
+        .search-container label,
+        .search-container input,
+        .search-container button {
+            margin-bottom: 10px;
+        }
+ 
+        input[type="submit"]:hover {
+            background-color: #E9E616;
+        }
+
+        /*Lists*/
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+ 
+        li {
+            margin: 10px 0;
+        }
+        #fileDetails{
+            border-color: #E9E616;
+        }
+        #fileDetails th{
+            background-color: rgba(4, 4, 48, 0.689);
+        }
+        #fileDetails td{
+            background-color: rgba(8, 8, 97, 0.721);
+        }
+        /*Footer*/
+        footer {
+            background-color: rgb(4, 4, 48);
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+            height: fit-content;
+            color: aliceblue;
+        }
+        footer a {
+            margin: 10px;
+            color: aliceblue;
+        }
+ 
+        /* Add media queries */
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            form {
+                max-width: 100%;
+            }
+            input[type="text"], textarea {
+                font-size: 14px;
+            }
+            footer {
+                font-size: small !important;
+            }
+            .logoImg {
+                height: 75px !important;
+                width: 250px !important;
+                align-self: center;
+            }
+        }
+ 
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                padding: 15px;
+            }
+            form {
+                max-width: 80%;
+            }
+            input[type="text"], textarea {
+                font-size: 16px;
+            }
+            .logoImg {
+                height: 75px !important;
+                width: 250px !important;
+                align-self: center;
+            }
+        }
+
+        /*Logo Shake Animation*/
+        @keyframes Shake {
+            30% {
+                transform: translateX(50px);
+                animation-timing-function: ease-in-out;
+            }
+ 
+            70% {
+                transform: translateX(-50px);
+                animation-timing-function: ease-in-out;
+            }
+ 
+            100% {
+                transform: translateX(0px);
+                animation-timing-function: ease-in-out;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <img src="Small Logo.png" class="logoImg">
+    <h1>Share Resources</h1>
+    <p>This is a place for students to share resources such as lecture notes, slides, and study guides.</p>
+
+    <!--Form to share resources-->
+    <label for="file" style="margin: 0 auto;">File:</label>
+    <input type="file" id="FileInp" style="margin: 0 auto;"><br>
+    <button id="SubmitBtn" onclick="uploadFile()">Submit</button>
+    <br>
+
+    <div class="search-container">
+        <h3>Search Files</h3>
+        <label for="searchInput">Search (Type in a filename):</label>
+        <input type="text" id="searchInput">
+        <button onclick="searchFiles()">Search</button>
+    </div>
+    <h3>Uploaded File Details</h3>
+
+    <table border="1" id="fileDetails">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Size</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody id="FileTBody"></tbody>
+    </table>
+    <hr color="#E9E616" style="width: 100%;">
+
+    <!--Already shared resources-->
+    <h3>Recent Resources</h3>
+    <ul>
+        <li>Lecture Notes - Introduction to Programming</li>
+        <li>Slide Deck - Data Structures and Algorithms</li>
+        <li>Study Guide - Operating Systems</li>
+    </ul>
+</body>
+
+<script src="Resources.js"></script>
+
+<footer>
+    <a href="Home.html">Home</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="discussion.html">Discussion</a>
+    <a href="about.html">About us</a>
+    <a href="contact-us.html">Contact us</a>
+    <p>Message us on <a href="mailto:TopHatsBuddies@gmail.com">TopHatsBuddies@gmail.com</a>, find more information on the contact us page</p>
+    <p>Copyright &copy; 2024 Top Hats</p>
+</footer>
+</html>
