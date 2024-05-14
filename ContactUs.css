@@ -1,0 +1,109 @@
+
+  /*Body styling to fit footer at bottom*/
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("logo_final.png");
+    background-position: center;
+    background-size: cover;
+  }
+  /*Headers*/
+  h1 {
+    text-align: center;
+    background-color: #9C6F44;
+    height: auto;
+    padding: 10px 0;
+    border-style: solid;
+    border-color: black;
+  }
+  h2 {
+    text-align: center;
+  }
+  /*div Class*/
+  .div1 {
+    background-color: #9c6f44cd; 
+    padding: 2px; 
+    margin-top: 10px;
+    height: fit-content;
+    border-style: solid;
+    border-color: black;
+  }
+  /*Contact Info Paragraph*/
+  .ContacIP { 
+    padding: 10px;
+    font-size: large;
+    color: white;
+    text-align: center;
+  }
+  .p1{
+    padding: 10px;
+    font-size: large;
+    text-align: center;    
+  }
+  form{
+    /*move form to the middle*/
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9c6f44cd; 
+    padding: 2px; 
+    border-style: solid;
+    border-color: black;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+  }
+  /*Footer*/
+  footer {
+    background-color: rgb(4, 4, 48);
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    height: fit-content;
+    color: aliceblue;
+  }
+  footer a {
+    margin: 10px;
+    color: aliceblue;
+  }
+  /*Images*/
+  .Coffeeimg {
+    border-style: solid;
+    border-color: black;
+  }
+  .floorplansImg{
+    width: 90vw; 
+    margin-left: 5vw;
+    border: rgb(4, 4, 48) 10px double;
+  }
+  /*e-mail subsription button and inputs*/
+  .sendButton{
+        
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    background-color: #9c6f44cd;
+  }
+  #NameInp {
+    width: 300px;
+  }
+  #emailInp {
+    width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    body{
+      font-size: small !important;
+    }
+    .Coffeeimg{
+      height: 200px !important;
+      width: auto;
+    }
+    h1, h2 {
+      font-size: large !important;
+    }
+    .ContacIP { 
+      font-size: small !important;
+    }
+  }
