@@ -137,6 +137,5 @@ DoneBtn.addEventListener("click", () => {
 });
 
 OpenDBBtn.addEventListener("click", () => {
-  location.reload();
   dispTopHatsSubs();
 });
